@@ -1,8 +1,9 @@
-import '../../../../../Core/utlis/style.dart';
 import 'package:flutter/material.dart';
 
-class OrderInfoItem extends StatelessWidget {
-  const OrderInfoItem({super.key, required this.txt, required this.price});
+import '../../../../../Core/utlis/style.dart';
+
+class TotalPriceWidget extends StatelessWidget {
+  const TotalPriceWidget({super.key, required this.txt, required this.price});
   final String txt;
   final double price;
   @override
@@ -11,13 +12,13 @@ class OrderInfoItem extends StatelessWidget {
       children: [
         Text(
           txt,
-          style: Styles.style18,
+          style: Styles.style24,
         ),
         const Spacer(),
         Text(
           "\$$price",
-          style: Styles.style18,
-        )
+          style: Styles.style24,
+        ),
       ],
     );
   }

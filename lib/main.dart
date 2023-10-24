@@ -1,4 +1,4 @@
-import 'package:checkoutapp/Features/CheckOut/Presentation/View/MyCardView.dart';
+import 'Features/CheckOut/Presentation/View/MyCardView.dart';
 import 'package:flutter/material.dart';
 
 void main() {

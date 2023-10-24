@@ -1,5 +1,5 @@
-import 'package:checkoutapp/Core/utlis/Style.dart';
-import 'package:checkoutapp/Features/CheckOut/Presentation/View/Widget/MyCardViewBody.dart';
+import '../../../../Core/utlis/Style.dart';
+import 'Widget/MyCardViewBody.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
