@@ -1,7 +1,7 @@
-import '../../../../Core/utlis/Style.dart';
+import 'package:checkoutapp/Core/Widget/CustomAppBar.dart';
+
 import 'Widget/MyCardViewBody.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class MyCardView extends StatelessWidget {
   const MyCardView({super.key});
@@ -9,17 +9,7 @@ class MyCardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Center(
-            child: SvgPicture.asset(
-          "asset/image/Arrow.svg",
-        )),
-        centerTitle: true,
-        title: const Text(
-          "My Cart",
-          style: Styles.style25,
-        ),
-      ),
+      appBar: customAppBar(txt: "My Cart"),
       body: const MyCardViewBody(),
     );
   }

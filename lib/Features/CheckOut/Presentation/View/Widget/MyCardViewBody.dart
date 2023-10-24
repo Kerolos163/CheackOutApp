@@ -1,4 +1,5 @@
 import 'package:checkoutapp/Core/Widget/CustomButton.dart';
+import 'package:checkoutapp/Features/CheckOut/Presentation/View/PaymentDetails.dart';
 
 import 'package:flutter/material.dart';
 
@@ -44,7 +45,13 @@ class MyCardViewBody extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          const CustomButton(txt: "Complete Payment"),
+          CustomButton(
+            txt: "Complete Payment",
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const PaymentDetailsView()));
+            },
+          ),
           const SizedBox(
             height: 12,
           ),
