@@ -1,5 +1,8 @@
 import 'package:checkoutapp/Features/CheckOut/Presentation/View/Widget/PaymentMethodItem.dart';
+import 'package:checkoutapp/Features/CheckOut/Presentation/ViewModel/PaymentDetailsCubit/cubit.dart';
+import 'package:checkoutapp/Features/CheckOut/Presentation/ViewModel/PaymentDetailsCubit/state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PaymentmethodsListView extends StatelessWidget {
   const PaymentmethodsListView({super.key});
@@ -9,14 +12,26 @@ class PaymentmethodsListView extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      itemBuilder: (context, index) =>
-          PaymentMethodItem(img: paymentImage[index]),
-      separatorBuilder: (context, index) => const SizedBox(
-        width: 20,
-      ),
-      itemCount: paymentImage.length,
-      scrollDirection: Axis.horizontal,
+    return BlocBuilder<PaymentDetailsCubit, PaymentDetailsState>(
+      builder: (context, state) {
+        return ListView.separated(
+          itemBuilder: (context, index) => GestureDetector(
+            onTap: () {
+              PaymentDetailsCubit.get(context).changeMethod(newMethod: index);
+            },
+            child: PaymentMethodItem(
+              img: paymentImage[index],
+              isActive:
+                  index == PaymentDetailsCubit.get(context).selectedMethod,
+            ),
+          ),
+          separatorBuilder: (context, index) => const SizedBox(
+            width: 20,
+          ),
+          itemCount: paymentImage.length,
+          scrollDirection: Axis.horizontal,
+        );
+      },
     );
   }
 }
