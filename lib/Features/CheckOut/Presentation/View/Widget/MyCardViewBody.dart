@@ -1,3 +1,5 @@
+import 'package:checkoutapp/Core/Widget/CustomButton.dart';
+
 import 'package:flutter/material.dart';
 
 import 'OrderInfoItem.dart';
@@ -15,9 +17,9 @@ class MyCardViewBody extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          Image.asset("asset/image/PasketImage.png"),
+          Expanded(child: Image.asset("asset/image/PasketImage.png")),
           const SizedBox(
-            height: 20,
+            height: 16,
           ),
           const OrderInfoItem(txt: "Order Subtotal", price: 42.97),
           const SizedBox(
@@ -29,7 +31,7 @@ class MyCardViewBody extends StatelessWidget {
           ),
           const OrderInfoItem(txt: "Shipping", price: 0),
           const SizedBox(
-            height: 17,
+            height: 16,
           ),
           const Divider(
             thickness: 3,
@@ -38,7 +40,14 @@ class MyCardViewBody extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          const TotalPriceWidget(txt: "Total", price: 50.97)
+          const TotalPriceWidget(txt: "Total", price: 50.97),
+          const SizedBox(
+            height: 16,
+          ),
+          const CustomButton(txt: "Complete Payment"),
+          const SizedBox(
+            height: 12,
+          ),
         ],
       ),
     );
