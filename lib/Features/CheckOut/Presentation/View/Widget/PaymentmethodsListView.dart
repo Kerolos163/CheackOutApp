@@ -14,22 +14,25 @@ class PaymentmethodsListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<PaymentDetailsCubit, PaymentDetailsState>(
       builder: (context, state) {
-        return ListView.separated(
-          itemBuilder: (context, index) => GestureDetector(
-            onTap: () {
-              PaymentDetailsCubit.get(context).changeMethod(newMethod: index);
-            },
-            child: PaymentMethodItem(
-              img: paymentImage[index],
-              isActive:
-                  index == PaymentDetailsCubit.get(context).selectedMethod,
+        return SizedBox(
+          height: 62,
+          child: ListView.separated(
+            itemBuilder: (context, index) => GestureDetector(
+              onTap: () {
+                PaymentDetailsCubit.get(context).changeMethod(newMethod: index);
+              },
+              child: PaymentMethodItem(
+                img: paymentImage[index],
+                isActive:
+                    index == PaymentDetailsCubit.get(context).selectedMethod,
+              ),
             ),
+            separatorBuilder: (context, index) => const SizedBox(
+              width: 20,
+            ),
+            itemCount: paymentImage.length,
+            scrollDirection: Axis.horizontal,
           ),
-          separatorBuilder: (context, index) => const SizedBox(
-            width: 20,
-          ),
-          itemCount: paymentImage.length,
-          scrollDirection: Axis.horizontal,
         );
       },
     );

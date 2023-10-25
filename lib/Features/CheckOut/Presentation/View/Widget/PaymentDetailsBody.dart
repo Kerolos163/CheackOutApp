@@ -1,3 +1,5 @@
+import 'package:checkoutapp/Core/Widget/CustomButton.dart';
+
 import 'CustomCreditCard.dart';
 import 'PaymentmethodsListView.dart';
 import 'package:flutter/material.dart';
@@ -9,13 +11,21 @@ class PaymentDetailsBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Padding(
       padding: EdgeInsets.all(20.0),
-      child: Column(
-        children: [
-          SizedBox(
-            height: 62,
+      child: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
             child: PaymentmethodsListView(),
           ),
-          CustomCreditCard()
+          SliverToBoxAdapter(
+            child: CustomCreditCard(),
+          ),
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: CustomButton(txt: "Pay"),
+            ),
+          )
         ],
       ),
     );

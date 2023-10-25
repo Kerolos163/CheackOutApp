@@ -14,35 +14,33 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
   GlobalKey<FormState> formKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView(
-        children: [
-          CreditCardWidget(
-            cardNumber: cardNumber,
-            expiryDate: expiryDate,
-            cardHolderName: cardHolderName,
-            cvvCode: cvvCode,
-            showBackView: showBackView,
-            isHolderNameVisible: true,
-            onCreditCardWidgetChange: (value) {},
-          ),
-          CreditCardForm(
-            cardNumber: cardNumber,
-            expiryDate: expiryDate,
-            cardHolderName: cardHolderName,
-            cvvCode: cvvCode,
-            onCreditCardModelChange: (value) {
-              cardNumber = value.cardNumber;
-              expiryDate = value.expiryDate;
-              cardHolderName = value.cardHolderName;
-              cvvCode = value.cvvCode;
-              showBackView = value.isCvvFocused;
-              setState(() {});
-            },
-            formKey: formKey,
-          )
-        ],
-      ),
+    return Column(
+      children: [
+        CreditCardWidget(
+          cardNumber: cardNumber,
+          expiryDate: expiryDate,
+          cardHolderName: cardHolderName,
+          cvvCode: cvvCode,
+          showBackView: showBackView,
+          isHolderNameVisible: true,
+          onCreditCardWidgetChange: (value) {},
+        ),
+        CreditCardForm(
+          cardNumber: cardNumber,
+          expiryDate: expiryDate,
+          cardHolderName: cardHolderName,
+          cvvCode: cvvCode,
+          onCreditCardModelChange: (value) {
+            cardNumber = value.cardNumber;
+            expiryDate = value.expiryDate;
+            cardHolderName = value.cardHolderName;
+            cvvCode = value.cvvCode;
+            showBackView = value.isCvvFocused;
+            setState(() {});
+          },
+          formKey: formKey,
+        )
+      ],
     );
   }
 }
