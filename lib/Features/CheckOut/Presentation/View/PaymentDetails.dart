@@ -1,6 +1,6 @@
-import 'package:checkoutapp/Core/Widget/CustomAppBar.dart';
-import 'package:checkoutapp/Features/CheckOut/Presentation/View/Widget/PaymentDetailsBody.dart';
-import 'package:checkoutapp/Features/CheckOut/Presentation/ViewModel/PaymentDetailsCubit/cubit.dart';
+import '../../../../Core/Widget/CustomAppBar.dart';
+import 'Widget/PaymentDetailsBody.dart';
+import '../ViewModel/PaymentDetailsCubit/cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

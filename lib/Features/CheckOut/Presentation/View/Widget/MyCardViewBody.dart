@@ -1,5 +1,5 @@
-import 'package:checkoutapp/Core/Widget/CustomButton.dart';
-import 'package:checkoutapp/Features/CheckOut/Presentation/View/PaymentDetails.dart';
+import '../../../../../Core/Widget/CustomButton.dart';
+import '../PaymentDetails.dart';
 
 import 'package:flutter/material.dart';
 

@@ -1,5 +1,6 @@
-import 'Features/CheckOut/Presentation/View/MyCardView.dart';
 import 'package:flutter/material.dart';
+
+import 'Features/CheckOut/Presentation/View/MyCardView.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,5 +1,6 @@
-import 'package:checkoutapp/Core/utlis/style.dart';
 import 'package:flutter/material.dart';
+
+import '../utlis/style.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({super.key, required this.txt, this.onTap});

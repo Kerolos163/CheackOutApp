@@ -1,4 +1,5 @@
-import 'package:checkoutapp/Features/CheckOut/Presentation/View/Widget/PaymentmethodsListView.dart';
+import 'CustomCreditCard.dart';
+import 'PaymentmethodsListView.dart';
 import 'package:flutter/material.dart';
 
 class PaymentDetailsBody extends StatelessWidget {
@@ -14,6 +15,7 @@ class PaymentDetailsBody extends StatelessWidget {
             height: 62,
             child: PaymentmethodsListView(),
           ),
+          CustomCreditCard()
         ],
       ),
     );

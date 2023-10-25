@@ -1,4 +1,4 @@
-import 'package:checkoutapp/Core/Widget/CustomAppBar.dart';
+import '../../../../Core/Widget/CustomAppBar.dart';
 
 import 'Widget/MyCardViewBody.dart';
 import 'package:flutter/material.dart';

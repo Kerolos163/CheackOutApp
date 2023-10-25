@@ -1,6 +1,7 @@
-import 'package:checkoutapp/Core/utlis/style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../utlis/style.dart';
 
 AppBar customAppBar({required String txt, void Function()? onTap}) {
   return AppBar(
