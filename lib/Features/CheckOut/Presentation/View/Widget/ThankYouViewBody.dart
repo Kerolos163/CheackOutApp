@@ -1,3 +1,6 @@
+import 'package:checkoutapp/Features/CheckOut/Presentation/View/Widget/CustomCheckIcon.dart';
+import 'package:checkoutapp/Features/CheckOut/Presentation/View/Widget/CustomDashedLine.dart';
+import 'package:checkoutapp/Features/CheckOut/Presentation/View/Widget/ThankYouCart.dart';
 import 'package:flutter/material.dart';
 
 class ThankYouViewBody extends StatelessWidget {
@@ -5,6 +8,36 @@ class ThankYouViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Stack(
+          clipBehavior: Clip.none,
+          children: [
+            const ThankYouCart(),
+            circleWidget(context, right: -20),
+            circleWidget(context, left: -20),
+            Positioned(
+              top: MediaQuery.of(context).size.height / 1.5 + 20,
+              left: 20 + 5,
+              right: 20 + 5,
+              child: const CustomDashedLine(),
+            ),
+            const CustomCheckIcon()
+          ],
+        ),
+      ),
+    );
+  }
+
+  Positioned circleWidget(BuildContext context, {double? right, double? left}) {
+    return Positioned(
+      right: right,
+      left: left,
+      top: MediaQuery.of(context).size.height / 1.5,
+      child: const CircleAvatar(
+        backgroundColor: Colors.white,
+      ),
+    );
   }
 }
