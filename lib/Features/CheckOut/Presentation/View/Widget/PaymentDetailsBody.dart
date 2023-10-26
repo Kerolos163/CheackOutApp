@@ -1,5 +1,5 @@
-import 'package:checkoutapp/Core/Widget/CustomButton.dart';
-import 'package:checkoutapp/Features/CheckOut/Presentation/View/ThankYou.dart';
+import '../../../../../Core/Widget/CustomButton.dart';
+import '../ThankYou.dart';
 
 import 'CustomCreditCard.dart';
 import 'PaymentmethodsListView.dart';

@@ -1,8 +1,9 @@
-import '../../../../Core/Widget/CustomAppBar.dart';
-import 'Widget/PaymentDetailsBody.dart';
-import '../ViewModel/PaymentDetailsCubit/cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../Core/Widget/CustomAppBar.dart';
+import '../ViewModel/PaymentDetailsCubit/cubit.dart';
+import 'Widget/PaymentDetailsBody.dart';
 
 class PaymentDetailsView extends StatelessWidget {
   const PaymentDetailsView({super.key});

@@ -1,8 +1,9 @@
-import 'PaymentMethodItem.dart';
-import '../../ViewModel/PaymentDetailsCubit/cubit.dart';
-import '../../ViewModel/PaymentDetailsCubit/state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../ViewModel/PaymentDetailsCubit/cubit.dart';
+import '../../ViewModel/PaymentDetailsCubit/state.dart';
+import 'PaymentMethodItem.dart';
 
 class PaymentmethodsListView extends StatelessWidget {
   const PaymentmethodsListView({super.key});

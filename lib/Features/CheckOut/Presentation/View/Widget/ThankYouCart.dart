@@ -1,5 +1,8 @@
-import 'package:checkoutapp/Core/utlis/style.dart';
-import 'package:checkoutapp/Features/CheckOut/Presentation/View/Widget/ThankYouPaymentItem.dart';
+import 'CreditCardWidget.dart';
+
+import '../../../../../Core/utlis/style.dart';
+import 'ThankYouPaymentItem.dart';
+import 'TotalPriceWidget.dart';
 import 'package:flutter/material.dart';
 
 class ThankYouCart extends StatelessWidget {
@@ -14,7 +17,7 @@ class ThankYouCart extends StatelessWidget {
         color: const Color(0xffd9d9d9),
       ),
       child: const Padding(
-        padding: EdgeInsets.only(top: 66),
+        padding: EdgeInsets.only(top: 66, right: 22, left: 22),
         child: Column(
           children: [
             Text(
@@ -40,9 +43,19 @@ class ThankYouCart extends StatelessWidget {
               txt1: "To",
               txt2: "Sam Louis",
             ),
+            Divider(
+              height: 60,
+              thickness: 2,
+              indent: 10,
+              endIndent: 10,
+            ),
+            TotalPriceWidget(txt: "Total", price: 50.97),
+            SizedBox(height: 30),
+            CreditCardWidget()
           ],
         ),
       ),
     );
   }
 }
+

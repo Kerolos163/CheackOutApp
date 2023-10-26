@@ -1,7 +1,7 @@
-import '../../../../Core/Widget/CustomAppBar.dart';
-
-import 'Widget/MyCardViewBody.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../Core/Widget/CustomAppBar.dart';
+import 'Widget/MyCardViewBody.dart';
 
 class MyCardView extends StatelessWidget {
   const MyCardView({super.key});

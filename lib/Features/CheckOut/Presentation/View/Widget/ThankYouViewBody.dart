@@ -1,6 +1,6 @@
-import 'package:checkoutapp/Features/CheckOut/Presentation/View/Widget/CustomCheckIcon.dart';
-import 'package:checkoutapp/Features/CheckOut/Presentation/View/Widget/CustomDashedLine.dart';
-import 'package:checkoutapp/Features/CheckOut/Presentation/View/Widget/ThankYouCart.dart';
+import 'CustomCheckIcon.dart';
+import 'CustomDashedLine.dart';
+import 'ThankYouCart.dart';
 import 'package:flutter/material.dart';
 
 class ThankYouViewBody extends StatelessWidget {

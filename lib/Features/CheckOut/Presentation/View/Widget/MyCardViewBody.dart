@@ -1,8 +1,7 @@
-import '../../../../../Core/Widget/CustomButton.dart';
-import '../PaymentDetails.dart';
-
 import 'package:flutter/material.dart';
 
+import '../../../../../Core/Widget/CustomButton.dart';
+import '../PaymentDetails.dart';
 import 'OrderInfoItem.dart';
 import 'TotalPriceWidget.dart';
 

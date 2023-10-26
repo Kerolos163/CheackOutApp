@@ -1,5 +1,6 @@
-import 'package:checkoutapp/Core/utlis/style.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../Core/utlis/style.dart';
 
 class ThankYouPaymentItem extends StatelessWidget {
   const ThankYouPaymentItem(
@@ -7,23 +8,20 @@ class ThankYouPaymentItem extends StatelessWidget {
   final String txt1, txt2;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 22),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            txt1,
-            style: Styles.style18,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          txt1,
+          style: Styles.style18,
+        ),
+        Text(
+          txt2,
+          style: Styles.style18.copyWith(
+            fontWeight: FontWeight.w600,
           ),
-          Text(
-            txt2,
-            style: Styles.style18.copyWith(
-              fontWeight: FontWeight.w600,
-            ),
-          )
-        ],
-      ),
+        )
+      ],
     );
   }
 }

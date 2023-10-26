@@ -1,5 +1,6 @@
-import 'package:checkoutapp/Features/CheckOut/Presentation/View/Widget/ThankYouViewBody.dart';
 import 'package:flutter/material.dart';
+
+import 'Widget/ThankYouViewBody.dart';
 
 class ThankYouView extends StatelessWidget {
   const ThankYouView({super.key});
