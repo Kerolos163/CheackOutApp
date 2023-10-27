@@ -1,3 +1,5 @@
+import 'package:flutter_svg/svg.dart';
+
 import 'CreditCardWidget.dart';
 
 import '../../../../../Core/utlis/style.dart';
@@ -16,46 +18,71 @@ class ThankYouCart extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         color: const Color(0xffd9d9d9),
       ),
-      child: const Padding(
-        padding: EdgeInsets.only(top: 66, right: 22, left: 22),
+      child: Padding(
+        padding: const EdgeInsets.only(top: 66, right: 22, left: 22),
         child: Column(
           children: [
-            Text(
+            const Text(
               "Thank you!",
               style: Styles.style25,
             ),
-            Text(
+            const Text(
               "Your transaction was successful",
               style: Styles.style20,
             ),
-            SizedBox(height: 42),
-            ThankYouPaymentItem(
+            const SizedBox(height: 42),
+            const ThankYouPaymentItem(
               txt1: "Date",
               txt2: "01/24/2023",
             ),
-            SizedBox(height: 20),
-            ThankYouPaymentItem(
+            const SizedBox(height: 20),
+            const ThankYouPaymentItem(
               txt1: "Time",
               txt2: "10:15 AM",
             ),
-            SizedBox(height: 20),
-            ThankYouPaymentItem(
+            const SizedBox(height: 20),
+            const ThankYouPaymentItem(
               txt1: "To",
               txt2: "Sam Louis",
             ),
-            Divider(
+            const Divider(
               height: 60,
               thickness: 2,
               indent: 10,
               endIndent: 10,
             ),
-            TotalPriceWidget(txt: "Total", price: 50.97),
-            SizedBox(height: 30),
-            CreditCardWidget()
+            const TotalPriceWidget(txt: "Total", price: 50.97),
+            const SizedBox(height: 30),
+            const CreditCardWidget(),
+            const Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SvgPicture.asset("asset/image/barCode.svg"),
+                Container(
+                  decoration: BoxDecoration(
+                    border:
+                        Border.all(color: const Color(0xff34A853), width: 2),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 29, vertical: 14),
+                  child: Text(
+                    "PAID",
+                    style: Styles.style24.copyWith(
+                      color: const Color(0xff34A853),
+                    ),
+                  ),
+                )
+              ],
+            ),
+            SizedBox(
+              height: (MediaQuery.of(context).size.height) -
+                  ((MediaQuery.of(context).size.height / 1.5) + 220),
+            )
           ],
         ),
       ),
     );
   }
 }
-
