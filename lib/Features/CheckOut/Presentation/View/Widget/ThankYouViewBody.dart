@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'CustomCheckIcon.dart';
 import 'CustomDashedLine.dart';
@@ -9,24 +10,35 @@ class ThankYouViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Stack(
-          clipBehavior: Clip.none,
-          children: [
-            const ThankYouCart(),
-            circleWidget(context, right: -20),
-            circleWidget(context, left: -20),
-            Positioned(
-              top: MediaQuery.of(context).size.height / 1.5 + 20,
-              left: 20 + 5,
-              right: 20 + 5,
-              child: const CustomDashedLine(),
+    return Padding(
+      padding:
+          const EdgeInsets.only(left: 20.0, right: 20, top: 100, bottom: 20),
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          const ThankYouCart(),
+          circleWidget(context, right: -20),
+          circleWidget(context, left: -20),
+          Positioned(
+            top: MediaQuery.of(context).size.height / 1.5 + 20,
+            left: 20 + 5,
+            right: 20 + 5,
+            child: const CustomDashedLine(),
+          ),
+          const CustomCheckIcon(),
+          Positioned(
+            top: -30,
+            child: GestureDetector(
+              onTap: () {
+                print("back");
+                Navigator.of(context).pop();
+              },
+              child: SvgPicture.asset(
+                "asset/image/Arrow.svg",
+              ),
             ),
-            const CustomCheckIcon()
-          ],
-        ),
+          )
+        ],
       ),
     );
   }

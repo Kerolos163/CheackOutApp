@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 
 import '../utlis/style.dart';
 
-AppBar customAppBar({required String txt, void Function()? onTap}) {
+AppBar customAppBar({String? txt, void Function()? onTap}) {
   return AppBar(
     leading: GestureDetector(
       onTap: onTap,
@@ -14,7 +14,7 @@ AppBar customAppBar({required String txt, void Function()? onTap}) {
     ),
     centerTitle: true,
     title: Text(
-      txt,
+      txt??"",
       style: Styles.style25,
     ),
   );

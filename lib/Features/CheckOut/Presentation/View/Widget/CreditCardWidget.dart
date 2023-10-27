@@ -1,6 +1,7 @@
-import '../../../../../Core/utlis/style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../../../../../Core/utlis/style.dart';
 
 class CreditCardWidget extends StatelessWidget {
   const CreditCardWidget({super.key});

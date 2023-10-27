@@ -1,11 +1,10 @@
-import 'BarCodeRow.dart';
-
-import 'CreditCardWidget.dart';
+import 'package:flutter/material.dart';
 
 import '../../../../../Core/utlis/style.dart';
+import 'BarCodeRow.dart';
+import 'CreditCardWidget.dart';
 import 'ThankYouPaymentItem.dart';
 import 'TotalPriceWidget.dart';
-import 'package:flutter/material.dart';
 
 class ThankYouCart extends StatelessWidget {
   const ThankYouCart({super.key});
@@ -16,7 +15,7 @@ class ThankYouCart extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: const Color(0xffd9d9d9),
+        color: const Color(0xffEDEDED),
       ),
       child: Padding(
         padding: const EdgeInsets.only(top: 66, right: 22, left: 22),
@@ -58,7 +57,7 @@ class ThankYouCart extends StatelessWidget {
             const BarCodeRow(),
             SizedBox(
               height: (MediaQuery.of(context).size.height) -
-                  ((MediaQuery.of(context).size.height / 1.5) + 220),
+                  ((MediaQuery.of(context).size.height / 1.5) + 240),
             )
           ],
         ),

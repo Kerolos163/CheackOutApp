@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../Core/Widget/CustomButton.dart';
-import '../PaymentDetails.dart';
 import 'OrderInfoItem.dart';
+import 'PaymentBottomSheet.dart';
 import 'TotalPriceWidget.dart';
 
 class MyCardViewBody extends StatelessWidget {
@@ -47,8 +47,10 @@ class MyCardViewBody extends StatelessWidget {
           CustomButton(
             txt: "Complete Payment",
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const PaymentDetailsView()));
+              showModalBottomSheet(
+                context: context,
+                builder: (context) => const PaymentBottomSheet(),
+              );
             },
           ),
           const SizedBox(
