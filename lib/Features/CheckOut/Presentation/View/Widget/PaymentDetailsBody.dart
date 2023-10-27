@@ -1,9 +1,9 @@
+import 'package:flutter/material.dart';
+
 import '../../../../../Core/Widget/CustomButton.dart';
 import '../ThankYou.dart';
-
 import 'CustomCreditCard.dart';
 import 'PaymentmethodsListView.dart';
-import 'package:flutter/material.dart';
 
 class PaymentDetailsBody extends StatefulWidget {
   const PaymentDetailsBody({super.key});

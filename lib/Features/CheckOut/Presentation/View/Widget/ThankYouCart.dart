@@ -1,4 +1,4 @@
-import 'package:flutter_svg/svg.dart';
+import 'BarCodeRow.dart';
 
 import 'CreditCardWidget.dart';
 
@@ -55,27 +55,7 @@ class ThankYouCart extends StatelessWidget {
             const SizedBox(height: 30),
             const CreditCardWidget(),
             const Spacer(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SvgPicture.asset("asset/image/barCode.svg"),
-                Container(
-                  decoration: BoxDecoration(
-                    border:
-                        Border.all(color: const Color(0xff34A853), width: 2),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 29, vertical: 14),
-                  child: Text(
-                    "PAID",
-                    style: Styles.style24.copyWith(
-                      color: const Color(0xff34A853),
-                    ),
-                  ),
-                )
-              ],
-            ),
+            const BarCodeRow(),
             SizedBox(
               height: (MediaQuery.of(context).size.height) -
                   ((MediaQuery.of(context).size.height / 1.5) + 220),
@@ -86,3 +66,4 @@ class ThankYouCart extends StatelessWidget {
     );
   }
 }
+

@@ -1,7 +1,8 @@
+import 'package:flutter/material.dart';
+
 import 'CustomCheckIcon.dart';
 import 'CustomDashedLine.dart';
 import 'ThankYouCart.dart';
-import 'package:flutter/material.dart';
 
 class ThankYouViewBody extends StatelessWidget {
   const ThankYouViewBody({super.key});
