@@ -14,7 +14,7 @@ AppBar customAppBar({String? txt, void Function()? onTap}) {
     ),
     centerTitle: true,
     title: Text(
-      txt??"",
+      txt ?? "",
       style: Styles.style25,
     ),
   );
