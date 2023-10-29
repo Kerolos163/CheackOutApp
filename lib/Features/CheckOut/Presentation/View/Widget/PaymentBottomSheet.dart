@@ -1,3 +1,9 @@
+import 'package:checkoutapp/Features/CheckOut/Data/Models/Payment_Intent_Input_Model/PaymentIntentInputModel.dart';
+import 'package:checkoutapp/Features/CheckOut/Presentation/View/ThankYou.dart';
+import 'package:checkoutapp/Features/CheckOut/Presentation/ViewModel/StribeCubit/stribe_cubit.dart';
+import 'package:checkoutapp/Features/CheckOut/Presentation/ViewModel/StribeCubit/stribe_state.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../../../Core/Widget/CustomButton.dart';
 import 'PaymentmethodsListView.dart';
 import 'package:flutter/material.dart';
@@ -7,19 +13,44 @@ class PaymentBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(16),
+    return Padding(
+      padding: const EdgeInsets.all(16),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          PaymentmethodsListView(),
-          SizedBox(
+          const PaymentmethodsListView(),
+          const SizedBox(
             height: 16,
           ),
-          CustomButton(txt: "Continue")
+          BlocConsumer<StribeCubit, StribeState>(
+            listener: (context, state) {
+              if (state is StribeSuccess) {
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (context) => const ThankYouView(),
+                ));
+              } else if (state is StribeFailure) {
+                Navigator.pop(context);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(state.error),
+                  ),
+                );
+              }
+            },
+            builder: (context, state) {
+              return CustomButton(
+                txt: "Continue",
+                isLoading: state is StribeLoading ? true : false,
+                onTap: () {
+                  PaymentIntentInputModel paymentIntentInputModel=PaymentIntentInputModel(amount: "10", currency: "USD");
+                  StribeCubit.get(context).makePayment(paymentIntentInputModel: paymentIntentInputModel);
+                },
+              );
+            },
+          )
         ],
       ),
     );

@@ -1,10 +1,17 @@
+import 'package:checkoutapp/Core/utlis/DioHelper.dart';
+import 'package:checkoutapp/Core/utlis/api_keys.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
+
 import 'Features/CheckOut/Presentation/ViewModel/PaymentDetailsCubit/cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'Features/CheckOut/Presentation/View/MyCardView.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  DioHelper.init();
+  Stripe.publishableKey = ApiKeys.publishkey;
   runApp(const MyApp());
 }
 

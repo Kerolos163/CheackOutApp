@@ -1,4 +1,7 @@
+import 'package:checkoutapp/Features/CheckOut/Data/repos/check_out_repo_imp.dart';
+import 'package:checkoutapp/Features/CheckOut/Presentation/ViewModel/StribeCubit/stribe_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../Core/Widget/CustomButton.dart';
 import 'OrderInfoItem.dart';
@@ -49,7 +52,10 @@ class MyCardViewBody extends StatelessWidget {
             onTap: () {
               showModalBottomSheet(
                 context: context,
-                builder: (context) => const PaymentBottomSheet(),
+                builder: (context) =>  BlocProvider(
+                  create: (context) => StribeCubit(CheckOutRepoImp()),
+                  child: const PaymentBottomSheet(),
+                ),
               );
             },
           ),
