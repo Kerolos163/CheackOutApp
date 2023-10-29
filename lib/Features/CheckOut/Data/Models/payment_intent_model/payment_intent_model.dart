@@ -99,10 +99,10 @@ class PaymentIntentModel {
       amountReceived: json['amount_received'] as int?,
       application: json['application'] as dynamic,
       applicationFeeAmount: json['application_fee_amount'] as dynamic,
-      // automaticPaymentMethods: json['automatic_payment_methods'] == null
-      //     ? null
-      //     : AutomaticPaymentMethods.fromJson(
-      //         json['automatic_payment_methods'] as Map<String, dynamic>),
+      automaticPaymentMethods: json['automatic_payment_methods'] == null
+          ? null
+          : AutomaticPaymentMethods.fromJson(
+              json['automatic_payment_methods'] as Map<String, dynamic>),
       canceledAt: json['canceled_at'] as dynamic,
       cancellationReason: json['cancellation_reason'] as dynamic,
       captureMethod: json['capture_method'] as String?,
