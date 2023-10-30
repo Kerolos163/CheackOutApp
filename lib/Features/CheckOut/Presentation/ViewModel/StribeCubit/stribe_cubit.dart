@@ -1,8 +1,8 @@
 import 'dart:developer';
 
-import 'package:checkoutapp/Features/CheckOut/Data/Models/Payment_Intent_Input_Model/PaymentIntentInputModel.dart';
-import 'package:checkoutapp/Features/CheckOut/Data/repos/check_out_repo.dart';
-import 'package:checkoutapp/Features/CheckOut/Presentation/ViewModel/StribeCubit/stribe_state.dart';
+import '../../../Data/Models/Payment_Intent_Input_Model/PaymentIntentInputModel.dart';
+import '../../../Data/repos/check_out_repo.dart';
+import 'stribe_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class StribeCubit extends Cubit<StribeState> {

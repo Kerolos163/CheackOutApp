@@ -1,5 +1,5 @@
-import 'package:checkoutapp/Core/utlis/DioHelper.dart';
-import 'package:checkoutapp/Core/utlis/api_keys.dart';
+import 'Core/utlis/DioHelper.dart';
+import 'Core/utlis/api_keys.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 
 import 'Features/CheckOut/Presentation/ViewModel/PaymentDetailsCubit/cubit.dart';

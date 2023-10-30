@@ -1,9 +1,9 @@
-import 'package:checkoutapp/Features/CheckOut/Data/repos/check_out_repo_imp.dart';
-import 'package:checkoutapp/Features/CheckOut/Presentation/ViewModel/StribeCubit/stribe_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../Core/Widget/CustomButton.dart';
+import '../../../Data/repos/check_out_repo_imp.dart';
+import '../../ViewModel/StribeCubit/stribe_cubit.dart';
 import 'OrderInfoItem.dart';
 import 'PaymentBottomSheet.dart';
 import 'TotalPriceWidget.dart';

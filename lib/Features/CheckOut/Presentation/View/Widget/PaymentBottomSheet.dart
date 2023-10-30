@@ -1,7 +1,9 @@
-import 'package:checkoutapp/Features/CheckOut/Data/Models/Payment_Intent_Input_Model/PaymentIntentInputModel.dart';
-import 'package:checkoutapp/Features/CheckOut/Presentation/View/ThankYou.dart';
-import 'package:checkoutapp/Features/CheckOut/Presentation/ViewModel/StribeCubit/stribe_cubit.dart';
-import 'package:checkoutapp/Features/CheckOut/Presentation/ViewModel/StribeCubit/stribe_state.dart';
+import 'dart:developer';
+
+import '../../../Data/Models/Payment_Intent_Input_Model/PaymentIntentInputModel.dart';
+import '../ThankYou.dart';
+import '../../ViewModel/StribeCubit/stribe_cubit.dart';
+import '../../ViewModel/StribeCubit/stribe_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../Core/Widget/CustomButton.dart';
@@ -32,6 +34,7 @@ class PaymentBottomSheet extends StatelessWidget {
                   builder: (context) => const ThankYouView(),
                 ));
               } else if (state is StribeFailure) {
+                log(state.error);
                 Navigator.pop(context);
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(

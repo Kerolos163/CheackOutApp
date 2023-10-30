@@ -1,8 +1,8 @@
-import 'package:checkoutapp/Core/utlis/DioHelper.dart';
-import 'package:checkoutapp/Core/utlis/EndPoint.dart';
-import 'package:checkoutapp/Core/utlis/api_keys.dart';
-import 'package:checkoutapp/Features/CheckOut/Data/Models/Payment_Intent_Input_Model/PaymentIntentInputModel.dart';
-import 'package:checkoutapp/Features/CheckOut/Data/Models/payment_intent_model/payment_intent_model.dart';
+import 'DioHelper.dart';
+import 'EndPoint.dart';
+import 'api_keys.dart';
+import '../../Features/CheckOut/Data/Models/Payment_Intent_Input_Model/PaymentIntentInputModel.dart';
+import '../../Features/CheckOut/Data/Models/payment_intent_model/payment_intent_model.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 
 class StripeService {
