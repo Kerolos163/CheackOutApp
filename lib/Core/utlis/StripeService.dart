@@ -1,5 +1,7 @@
+import 'package:checkoutapp/Core/utlis/endpoint.dart';
+import 'package:checkoutapp/Features/CheckOut/Data/Models/ephemeral/ephemeral.key.mode.dart';
+
 import 'DioHelper.dart';
-import 'EndPoint.dart';
 import 'api_keys.dart';
 import '../../Features/CheckOut/Data/Models/Payment_Intent_Input_Model/PaymentIntentInputModel.dart';
 import '../../Features/CheckOut/Data/Models/payment_intent_model/payment_intent_model.dart';
@@ -37,5 +39,15 @@ class StripeService {
     await initPaymentSheet(
         paymentIntentClientSecret: paymentIntentModel.clientSecret!);
     await displayPaymentSheet();
+  }
+
+  Future<Ephemeral> createEphemeral({required String customerID}) async {
+    var response = await DioHelper.postData(
+        url: ephemeralKeys,
+        authorization: ApiKeys.secretkey,
+        stripeService: "2023-10-16",
+        data: {"customer": customerID});
+    var ephemeralKey = Ephemeral.fromJson(response.data);
+    return ephemeralKey;
   }
 }

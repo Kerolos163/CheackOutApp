@@ -20,14 +20,17 @@ class DioHelper {
     return await dio.get(url, queryParameters: query);
   }
 
-  static postData(
-      {required String url,
-      Map<String, dynamic>? query,
-      required Map<String, dynamic> data,
-      String? authorization}) async {
+  static postData({
+    required String url,
+    Map<String, dynamic>? query,
+    required Map<String, dynamic> data,
+    String? authorization,
+    String? stripeService,
+  }) async {
     dio.options.headers = {
       'Content-Type': 'application/x-www-form-urlencoded',
       'Authorization': "Bearer $authorization",
+      'Stripe-Version': stripeService
     };
     return await dio.post(url, queryParameters: query, data: data);
   }

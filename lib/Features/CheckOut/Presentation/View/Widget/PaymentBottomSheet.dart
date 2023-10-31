@@ -48,8 +48,15 @@ class PaymentBottomSheet extends StatelessWidget {
                 txt: "Continue",
                 isLoading: state is StribeLoading ? true : false,
                 onTap: () {
-                  PaymentIntentInputModel paymentIntentInputModel=PaymentIntentInputModel(amount: "10", currency: "USD");
-                  StribeCubit.get(context).makePayment(paymentIntentInputModel: paymentIntentInputModel);
+                  PaymentIntentInputModel paymentIntentInputModel =
+                      PaymentIntentInputModel(
+                    amount: "10",
+                    currency: "USD",
+                    customerId:
+                        "cus_Ov8pjKMu8S9Bn4", //come from Account Object Should Create when Create Account
+                  );
+                  StribeCubit.get(context).makePayment(
+                      paymentIntentInputModel: paymentIntentInputModel);
                 },
               );
             },
