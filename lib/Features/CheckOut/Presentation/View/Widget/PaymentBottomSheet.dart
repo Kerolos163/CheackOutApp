@@ -1,14 +1,15 @@
 import 'dart:developer';
 
-import '../../../Data/Models/Payment_Intent_Input_Model/PaymentIntentInputModel.dart';
-import '../ThankYou.dart';
-import '../../ViewModel/StribeCubit/stribe_cubit.dart';
-import '../../ViewModel/StribeCubit/stribe_state.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../Core/Widget/CustomButton.dart';
+import '../../../../../Core/utlis/api_keys.dart';
+import '../../../Data/Models/Payment_Intent_Input_Model/PaymentIntentInputModel.dart';
+import '../../ViewModel/StribeCubit/stribe_cubit.dart';
+import '../../ViewModel/StribeCubit/stribe_state.dart';
+import '../ThankYou.dart';
 import 'PaymentmethodsListView.dart';
-import 'package:flutter/material.dart';
 
 class PaymentBottomSheet extends StatelessWidget {
   const PaymentBottomSheet({super.key});
@@ -53,7 +54,7 @@ class PaymentBottomSheet extends StatelessWidget {
                     amount: "10",
                     currency: "USD",
                     customerId:
-                        "cus_Ov8pjKMu8S9Bn4", //come from Account Object Should Create when Create Account
+                        customerId, //come from Account Object Should Create when Create Account
                   );
                   StribeCubit.get(context).makePayment(
                       paymentIntentInputModel: paymentIntentInputModel);

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../../Core/Widget/CustomAppBar.dart';
-
 import 'Widget/PaymentDetailsBody.dart';
 
 class PaymentDetailsView extends StatelessWidget {

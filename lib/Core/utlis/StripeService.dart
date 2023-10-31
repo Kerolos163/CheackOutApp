@@ -1,5 +1,6 @@
-import 'package:checkoutapp/Core/utlis/endpoint.dart';
-import 'package:checkoutapp/Features/CheckOut/Data/Models/ephemeral/ephemeral.key.mode.dart';
+import 'endpoint.dart';
+import '../../Features/CheckOut/Data/Models/ephemeral/ephemeral.key.mode.dart';
+import '../../Features/CheckOut/Data/Models/initpaymentSheetInputModel/init_payment_sheet_input_model.dart';
 
 import 'DioHelper.dart';
 import 'api_keys.dart';
@@ -20,12 +21,16 @@ class StripeService {
     return paymentIntentModel;
   }
 
-  Future initPaymentSheet({required String paymentIntentClientSecret}) async {
+  Future initPaymentSheet(
+      {required InitpaymentSheetInputModel initpaymentSheetInputModel}) async {
     await Stripe.instance.initPaymentSheet(
         paymentSheetParameters: SetupPaymentSheetParameters(
-      merchantDisplayName: "Kerolos Essa",
-      paymentIntentClientSecret: paymentIntentClientSecret,
-    ));
+            merchantDisplayName: "Kerolos Essa",
+            paymentIntentClientSecret:
+                initpaymentSheetInputModel.paymentIntentClientSecret,
+            customerEphemeralKeySecret:
+                initpaymentSheetInputModel.customerEphemeralKeySecret,
+            customerId: initpaymentSheetInputModel.customerId));
   }
 
   Future displayPaymentSheet() async {
@@ -36,8 +41,14 @@ class StripeService {
       {required PaymentIntentInputModel paymentIntentInputModel}) async {
     PaymentIntentModel paymentIntentModel =
         await createPaymentIntent(paymentIntentInputModel);
+    Ephemeral ephemeralKeyModel =
+        await createEphemeral(customerID: paymentIntentInputModel.customerId);
     await initPaymentSheet(
-        paymentIntentClientSecret: paymentIntentModel.clientSecret!);
+        initpaymentSheetInputModel: InitpaymentSheetInputModel(
+      customerId: paymentIntentInputModel.customerId,
+      paymentIntentClientSecret: paymentIntentModel.clientSecret!,
+      customerEphemeralKeySecret: ephemeralKeyModel.secret!,
+    ));
     await displayPaymentSheet();
   }
 
@@ -47,7 +58,7 @@ class StripeService {
         authorization: ApiKeys.secretkey,
         stripeService: "2023-10-16",
         data: {"customer": customerID});
-    var ephemeralKey = Ephemeral.fromJson(response.data);
-    return ephemeralKey;
+    var ephemeralKeyModel = Ephemeral.fromJson(response.data);
+    return ephemeralKeyModel;
   }
 }
