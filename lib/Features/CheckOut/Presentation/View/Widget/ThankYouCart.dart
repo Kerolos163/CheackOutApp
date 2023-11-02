@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../Core/utlis/style.dart';
-import 'BarCodeRow.dart';
+import 'bar_code_row.dart';
 import 'CreditCardWidget.dart';
 import 'ThankYouPaymentItem.dart';
 import 'TotalPriceWidget.dart';

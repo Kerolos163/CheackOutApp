@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../Data/Models/Payment_Intent_Input_Model/PaymentIntentInputModel.dart';
+import '../../../Data/Models/Payment_Intent_Input_Model/payment_intent_input_model.dart';
 import '../../../Data/repos/check_out_repo.dart';
 import 'stribe_state.dart';
 

@@ -4,7 +4,7 @@ import '../../Features/CheckOut/Data/Models/initpaymentSheetInputModel/init_paym
 
 import 'DioHelper.dart';
 import 'api_keys.dart';
-import '../../Features/CheckOut/Data/Models/Payment_Intent_Input_Model/PaymentIntentInputModel.dart';
+import '../../Features/CheckOut/Data/Models/Payment_Intent_Input_Model/payment_intent_input_model.dart';
 import '../../Features/CheckOut/Data/Models/payment_intent_model/payment_intent_model.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 
